@@ -1,0 +1,61 @@
+ @import '../../_base.scss';
+
+   form {
+      width: 76%;
+      padding: 0.1rem;
+      border-radius: 3px;
+      background-color: $black-secondary;
+
+      select {
+         width: 100%;
+         border: 1.2px solid ;
+         font-weight: 500;
+         background: transparent;
+         padding: 0.3rem;
+         margin: 0.3rem;
+         color: $text-color;
+
+         &:focus {
+            outline: none;
+         }
+      }
+      .select1 {
+         width: 55px;
+         border: 1.2px solid;
+         background: transparent;
+         padding: 4px 10px;
+         color: $text-color;
+      }
+      .select2 {
+         width: 260px;
+      }
+      option {
+         background: $black-secondary;
+         color: $text-color;
+      }
+      label {
+         margin-left: 10px;
+      }
+
+      .terms {
+         width: 350px;
+      }
+      .location {
+         width: 350px;
+      }
+      .radius {
+         width: 100px;
+      }
+
+      button {
+         padding: 0 1.25rem;
+         color: $text-color;
+         background: transparent;
+         border: none;
+         &:focus {
+            border: none;
+         }
+      }
+   }
+
+   

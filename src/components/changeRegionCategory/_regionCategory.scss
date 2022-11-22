@@ -1,0 +1,48 @@
+@import '../../_base.scss';
+
+   form {
+      border-radius: 3px;
+      background-color: $black-secondary;
+
+      .select1 {
+         width: 75px;
+      }
+      .select2 {
+         width: 260px;
+      }
+      input {
+         width: 100%;
+         border: 1.2px solid;
+         font-weight: 500;
+         background: transparent;
+         padding: 0.3rem;
+         margin: 0.3rem;
+         color: $text-color;
+
+         &:focus {
+            outline: none;
+         }
+         
+      }
+      .terms {
+         width: 350px;
+      }
+      .location {
+         width: 350px;
+      }
+      .radius {
+         width: 100px;
+      }
+
+      button {
+         padding: 0 1.25rem;
+         color: $text-color;
+         background: transparent;
+         border: none;
+         &:focus {
+            border: none;
+         }
+      }
+   }
+
+   
