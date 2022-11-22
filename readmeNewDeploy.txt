@@ -18,7 +18,7 @@ add a project at firebase (stay on the same computer)
 
 add a realtime database to the project
 
-import database json data exported from yt-clone-personal-search
+import database json data exported from info-feed-react-firebase-sass
 
 add an app by pressing '</>' to register app, choosing nickname in
 step 1 then copying the firebaseConfig info in step 2
@@ -26,11 +26,11 @@ step 1 then copying the firebaseConfig info in step 2
 put the firebaseConfig in src\firebase.js
 
 from firebase.js, get 'authDomain'
-	e.g. yt-custom-search-2.firebaseapp.com
+	e.g. info-feed-react-firebase-sass.firebaseapp.com
 at src/screens/homescreen/HomeScreen.js line 87 change the url to:
-	e.g. https://yt-custom-search-2.firebaseapp.com/
+	https://info-feed-react-firebase-sass.firebaseapp.com/
 at src/screens/homescreen/HomeScreen.js line 88 change the url to:
-	e.g. https://yt-custom-search-2.web.app/
+	https://info-feed-react-firebase-sass.web.app/
 
 under authentication (at firebase) add 'Google'
 
@@ -70,8 +70,8 @@ firebase deploy
 
 deploy using Github Actions:
 
-add 'CI=false' to build script in package.json
-we need .env on github, so make sure .gitignore is not stopping it
+add 'CI=false' to the build script in package.json, 
+if it is not already there
 
 Go to github, staying on the same computer
 
@@ -83,6 +83,11 @@ git commit -m "first commit"
 git remote add origin https://github.com/jergra/<project name>.git
 git branch -M main
 git push -u origin main 
+
+at github -> Settings -> Environments -> add .env and
+add the environmental value name 'REACT_APP_YT_API_KEY' and
+its value, the apikey value
+
 
 if you are logged in to firebase, logout
 
