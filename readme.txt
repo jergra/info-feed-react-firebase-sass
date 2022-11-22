@@ -22,7 +22,7 @@ to do:
 
 Nov 20, 2022
 
-C:\dev\info-feed-react-firebase-bootstrap 
+C:\dev\info-feed-react-firebase-sass
 (on the old computer since it needs node 16; 
 an npm install with node 18 will fail)
 
