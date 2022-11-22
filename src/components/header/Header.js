@@ -268,7 +268,7 @@ const Header = () => {
                         <div>
                            <div><MdRestartAlt size={40} /></div>
                            <div style={{marginLeft: 20, marginRight: 20, marginTop: 10, fontSize: 30}}>
-                              START
+                              Start
                            </div>
                         </div>
                      </button>
