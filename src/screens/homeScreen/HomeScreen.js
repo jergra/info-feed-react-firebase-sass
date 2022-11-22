@@ -84,8 +84,8 @@ const HomeScreen = () => {
     // we do not want that reloaded when we press the browser's reload, because that causes
     // an error, so let's do this automated second reload below to clear the error
     // and get us back to home
-    if ((window.location == 'https://info-feed-react-firebase.web.app/') 
-        || (window.location == 'info-feed-react-firebase.firebaseapp.com/')
+    if ((window.location == 'https://info-feed-react-firebase-sass.web.app/') 
+        || (window.location == 'info-feed-react-firebase-sass.firebaseapp.com')
         || (window.location == 'http://localhost:3000/') 
         || (window.location == 'http://localhost:3001/')) {
     } else {

@@ -20,7 +20,7 @@ to do:
 
 
 
-Nov 20, 2022
+Nov 22, 2022
 
 C:\dev\info-feed-react-firebase-sass
 (on the old computer since it needs node 16; 
