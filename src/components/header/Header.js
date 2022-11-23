@@ -4,7 +4,7 @@ import './_header.scss'
 import '../categoriesBar/_categoriesBar.scss'
 
 import { AiOutlineSearch, AiFillCaretRight } from 'react-icons/ai'
-import { MdNotifications, MdApps, MdRestartAlt } from 'react-icons/md'
+import { MdNotifications, MdApps, MdPowerSettingsNew } from 'react-icons/md'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -264,9 +264,9 @@ const Header = () => {
                </div>
                <div style={{width: 980, marginLeft: 10, marginTop: 12, marginBottom: 40}}>
                   <a>
-                     <button onClick={() => firstPage()} style={{paddingTop: 20, paddingBottom: 20}}>
+                     <button onClick={() => firstPage()} style={{paddingTop: 20, paddingBottom: 20, borderRadius: 8}}>
                         <div>
-                           <div><MdRestartAlt size={40} /></div>
+                           <div><MdPowerSettingsNew size={40} /></div>
                            <div style={{marginLeft: 20, marginRight: 20, marginTop: 10, fontSize: 30}}>
                               Start
                            </div>
@@ -287,7 +287,7 @@ const Header = () => {
                />
                </div>
                <div style={{ width: 90, height: 50, position: 'absolute', top: 300, left: 900}}>
-                  <button type='submit'>
+                  <button type='submit' style={{borderRadius: 8}}>
                      Save
                   </button>
                </div>
@@ -306,7 +306,7 @@ const Header = () => {
                />
                </div>
                <div style={{ width: 90, height: 50, position: 'absolute', top: 400, left: 900}}>
-                  <button type='submit'>
+                  <button type='submit' style={{borderRadius: 8}}>
                      Save
                   </button>
                </div>
@@ -321,7 +321,7 @@ const Header = () => {
                   onChange={e => setTerms(e.target.value)}
                />
                <div style={{ width: 90, height: 50, position: 'absolute', top: 745, left: 1150}}>
-                  <button type='submit'>
+                  <button type='submit' style={{borderRadius: 8}}>
                      Save
                   </button>
                </div>

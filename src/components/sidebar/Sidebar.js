@@ -1,5 +1,6 @@
 import React from "react"
 import "./_sidebar.scss"
+import { AiFillGithub } from 'react-icons/ai'
 import {
    MdSubscriptions,
    MdExitToApp,
@@ -52,14 +53,18 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
          
             {/* <MdExitToApp size={23} /> */}
             <div className='header1__icons'>
-               <img src={user?.photoURL} alt='avatar' />
+               <img src={user?.photoURL} alt='' />
             </div>
             <a>
                <li onClick={logOutHandler}>
                   <div style={{fontSize: 23, color: '#b1bdb4'}}>Logout</div>
                </li>
             </a>
-
+            <div className='header1__icons' style={{marginTop: 250}}>
+               <a href='https://github.com/jergra/info-feed-react-firebase-sass' target='_blank' rel="noreferrer">
+                  <AiFillGithub size={40} />
+               </a>
+            </div>
       </nav>
    )
 }

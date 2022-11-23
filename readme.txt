@@ -5,8 +5,6 @@ to do:
   change terminology from locationRadius, location, terms to
   speed, terms, pages
 
-  add github link
-
   fix the alignment of the 'save' buttons
 
   make the search pages invisible so that they cannot
