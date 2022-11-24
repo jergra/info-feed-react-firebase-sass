@@ -1,20 +1,20 @@
 to do:
+  test to see if the app works with only the seven 
+  search pages and nothing else; if not, make it so that
+  there is always a minimum number of other pages
+
   try putting location (speed) retrieval in the bottom useEffect
   with an axios await
 
   change terminology from locationRadius, location, terms to
   speed, terms, pages
 
-  fix the alignment of the 'save' buttons
-
   make the search pages invisible so that they cannot
   be removed
 
-  test to see if the app works with only the seven 
-  search pages and nothing else; if not, make it so that
-  there is always a minimum number of other pages
-
   make pages individually deletable
+
+  remove the youtubeAPI functionality
 
 
 

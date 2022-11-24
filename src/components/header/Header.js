@@ -263,67 +263,67 @@ const Header = () => {
                <div style={{width: 500, marginLeft: 10}}>
                </div>
                <div style={{width: 980, marginLeft: 10, marginTop: 12, marginBottom: 40}}>
-                  <a>
-                     <button onClick={() => firstPage()} style={{paddingTop: 20, paddingBottom: 20, borderRadius: 8}}>
-                        <div>
-                           <div><MdPowerSettingsNew size={40} /></div>
-                           <div style={{marginLeft: 20, marginRight: 20, marginTop: 10, fontSize: 30}}>
-                              Start
-                           </div>
+                  <button onClick={() => firstPage()} style={{paddingTop: 20, paddingBottom: 20, borderRadius: 8}}>
+                     <div>
+                        <div><MdPowerSettingsNew size={40} /></div>
+                        <div style={{marginLeft: 20, marginRight: 20, marginTop: 10, fontSize: 30}}>
+                           Start
                         </div>
-                     </button>
-                  </a>
-               </div>  
-               <div style={{width: 380, marginLeft: 10, marginTop: 12}}>Speed (minutes)</div>
-               <div style={{marginLeft: -180}}>
-               <input 
-                  id="customLoc3"
-                  className="location"
-                  type="text" 
-                  style={{width: 50}}
-                  placeholder={location}
-                  defaultValue={location}
-                  onChange={e => setLocation(e.target.value)}
-               />
-               </div>
-               <div style={{ width: 90, height: 50, position: 'absolute', top: 300, left: 900}}>
-                  <button type='submit' style={{borderRadius: 8}}>
-                     Save
+                     </div>
                   </button>
+               </div>  
+               <div style={{width: 180, marginLeft: 8, marginTop: 12}}>Speed (minutes)</div>
+               <div style={{display: 'flex'}}>
+                  <input 
+                     id="customLoc3"
+                     className="location"
+                     type="text" 
+                     style={{width: 50}}
+                     placeholder={location}
+                     defaultValue={location}
+                     onChange={e => setLocation(e.target.value)}
+                  />
+                  <div style={{ width: 90, height: 50, marginTop: 13, marginLeft: 20}}>
+                     <button type='submit' style={{borderRadius: 8}}>
+                        Save
+                     </button>
+                  </div>
                </div>
             </form>
             <form onSubmit={handleSubmit5}>
                <div style={{width: 530, marginLeft: 10, marginTop: 12}}>Terms</div>
-               <div style={{marginLeft: 0}}>
-               <textarea
-                  id="customRad3"
-                  className="radius"
-                  type="text" 
-                  style={{width:480, height:280}}
-                  placeholder={locationRadius}
-                  defaultValue={locationRadius}
-                  onChange={e => setLocationRadius(e.target.value)}
-               />
-               </div>
-               <div style={{ width: 90, height: 50, position: 'absolute', top: 400, left: 900}}>
-                  <button type='submit' style={{borderRadius: 8}}>
-                     Save
-                  </button>
+               <div style={{display: 'flex'}}>
+                  <textarea
+                     id="customRad3"
+                     className="radius"
+                     type="text" 
+                     style={{width:480, height:280}}
+                     placeholder={locationRadius}
+                     defaultValue={locationRadius}
+                     onChange={e => setLocationRadius(e.target.value)}
+                  />
+                  <div style={{ width: 90, height: 50, marginTop: 6, marginLeft: 20}}>
+                     <button type='submit' style={{borderRadius: 8}}>
+                        Save
+                     </button>
+                  </div>
                </div>
             </form>
             <form onSubmit={handleSubmit4}>
-               <div style={{width: 530, marginLeft: 10, marginTop: 12}}>Pages</div>
-               <textarea
-                  id="customTerms"
-                  style={{width:730, height:780, marginBottom: 40}}
-                  placeholder={terms}
-                  defaultValue={terms}
-                  onChange={e => setTerms(e.target.value)}
-               />
-               <div style={{ width: 90, height: 50, position: 'absolute', top: 745, left: 1150}}>
-                  <button type='submit' style={{borderRadius: 8}}>
-                     Save
-                  </button>
+               <div style={{width: 530, marginLeft: 10, marginTop: 30}}>Pages</div>
+               <div style={{display: 'flex'}}>
+                  <textarea
+                     id="customTerms"
+                     style={{width:730, height:780, marginBottom: 40}}
+                     placeholder={terms}
+                     defaultValue={terms}
+                     onChange={e => setTerms(e.target.value)}
+                  />
+                  <div style={{ width: 90, height: 50, marginTop: 6, marginLeft: 20}}>
+                     <button type='submit' style={{borderRadius: 8}}>
+                        Save
+                     </button>
+                  </div>
                </div>
             </form>
          </div>
