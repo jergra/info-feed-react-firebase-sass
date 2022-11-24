@@ -55,13 +55,11 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
                <img src={user?.photoURL} alt='' />
             </div>
 
-            <div>
-               <a onClick={logOutHandler}>
-                  <div style={{display: 'flex', flexDirection: 'row'}}>
-                     <div><MdExitToApp size={23} /></div>
-                     <div style={{fontSize: 23, color: '#b1bdb4', marginLeft: -45}}>Logout</div>
-                  </div>
-               </a>
+            <div style={{marginTop: 50}}>
+               <div style={{display: 'flex', cursor: 'pointer'}}>
+                  <div onClick={logOutHandler}><MdExitToApp size={23} /></div>
+                  <div style={{fontSize: 23, color: '#b1bdb4'}} onClick={logOutHandler}>&nbsp;Logout</div>
+               </div>
             </div>
             
             <div className='header1__icons' style={{marginTop: 200}}>
