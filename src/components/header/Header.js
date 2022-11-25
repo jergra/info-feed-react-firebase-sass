@@ -127,7 +127,7 @@ const Header = () => {
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
       
-      if (urls.length > 8) {
+      if (urls.length >= 8) {
          const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
          window1.focus();
          const y = Math.floor(Math.random() * (urls.length - 7));
