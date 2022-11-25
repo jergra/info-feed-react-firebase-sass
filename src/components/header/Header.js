@@ -150,7 +150,7 @@ const Header = () => {
       console.log('urls.length:', urls.length)
       console.log('words.length:', words.length)
       const x = Math.floor(Math.random() * urls.length);
-      console.log('x:', x)
+      //console.log('x:', x)
          
       //const window1 = window.open("", "w1", 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes');
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
