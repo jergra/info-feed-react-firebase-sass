@@ -150,23 +150,25 @@ const Header = () => {
       console.log('urls.length:', urls.length)
       console.log('words.length:', words.length)
       const x = Math.floor(Math.random() * urls.length);
+      console.log('x:', x)
          
       //const window1 = window.open("", "w1", 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes');
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
       
-      if (urls.length >= 8 && x < urls.length - 7) {
-            //console.log('x, urls[x]:', x, urls[x]) 
-            const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
-            window1.focus()
-            window1.location = urls[x]
+      //if (urls.length >= 8 && x < urls.length - 7) {
+      if (x < urls.length - 7) {
+         console.log('x, urls[x]:', x, urls[x]) 
+         const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
+         window1.focus()
+         window1.location = urls[x]
       }  
-      if (urls.length < 8) {
-            const window1 = window.open("https://www.aldaily.com", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes')
-            window1.focus();
-      }
-      if (urls.length >= 8 && x >= urls.length - 7) {
-         //console.log('x, urls[x]:', x, urls[x]) 
+      // if (urls.length < 8) {
+      //    const window1 = window.open("https://www.aldaily.com", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes')
+      //    window1.focus();
+      // }
+      if (x >= urls.length - 7) {
+         console.log('x, urls[x]:', x, urls[x]) 
          const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
          window1.focus()
          const z = Math.floor(Math.random() * 2 + 1);
