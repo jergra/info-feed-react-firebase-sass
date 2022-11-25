@@ -121,23 +121,23 @@ const Header = () => {
    }, [])
 
 
-   function firstPage() {
-      const urls = terms.split(", ");
-      //const window1 = window.open("", "w1", 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes');
-      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+   // function firstPage() {
+   //    const urls = terms.split(", ");
+   //    //const window1 = window.open("", "w1", 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes');
+   //    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+   //    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
       
-      if (urls.length >= 8) {
-         const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
-         window1.focus();
-         const y = Math.floor(Math.random() * (urls.length - 7));
-         window1.location = urls[y]
-         //console.log('y, urls[y]:', y, urls[y])
-      } else {
-         const window1 = window.open("https://www.aldaily.com", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes')
-         window1.focus();
-      }
-   }
+   //    if (urls.length >= 8) {
+   //       const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
+   //       window1.focus();
+   //       const y = Math.floor(Math.random() * (urls.length - 7));
+   //       window1.location = urls[y]
+   //       //console.log('y, urls[y]:', y, urls[y])
+   //    } else {
+   //       const window1 = window.open("https://www.aldaily.com", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes')
+   //       window1.focus();
+   //    }
+   // }
 
         
    function newPage() {
@@ -263,7 +263,7 @@ const Header = () => {
                <div style={{width: 500, marginLeft: 10}}>
                </div>
                <div style={{width: 980, marginLeft: 10, marginTop: 12, marginBottom: 40}}>
-                  <button onClick={() => firstPage()} style={{paddingTop: 20, paddingBottom: 20, borderRadius: 8}}>
+                  <button onClick={() => newPage()} style={{paddingTop: 20, paddingBottom: 20, borderRadius: 8}}>
                      <div>
                         <div><MdPowerSettingsNew size={40} /></div>
                         <div style={{marginLeft: 20, marginRight: 20, marginTop: 10, fontSize: 30}}>
