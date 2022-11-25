@@ -230,7 +230,7 @@ const Header = () => {
    useEffect(() => {
       const interval = setInterval(() => {
          newPage()
-      }, 240000);
+      }, 60000);
       return () => clearInterval(interval);
    });
 

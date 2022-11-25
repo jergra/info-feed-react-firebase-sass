@@ -1,4 +1,6 @@
 to do:
+  center speed value within input
+  
   test to see if the app works with only the seven 
   search pages and nothing else; if not, make it so that
   there is always a minimum number of other pages
