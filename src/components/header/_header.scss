@@ -1,3 +1,198 @@
+// @import '../../_base.scss';
+
+// a {
+//    color: white !important;
+// }
+// #header {
+//    display: flex;
+//    flex-wrap: wrap;
+//    width: 1500px;
+//    height: 280px;
+// }
+// .top {
+//    width: 1200px;
+//    height: 70;
+//    display: flex;
+//    justify-content: space-between;
+//    padding-left: 20px;
+//    padding-top: 10px;
+// }
+// .header__logo {
+//    width: 40px;
+//    height: 40px;
+//    object-fit: contain;
+//    display: block;
+//    margin-right: 60px;
+// }
+// .logo2 {
+//    visibility: hidden;
+// }
+// .header1 {
+//    width: 800px;
+//    background-color: $black-primary;
+
+//    height: 70px;
+
+//    z-index: 999;
+//    &__menu {
+//       display: none;
+//    }
+//    &__logo {
+//       width: 30px;
+//       height: 30px;
+//       object-fit: contain;
+//       display: block;
+//    }
+//    &__icons {
+//       width: 180px;
+//       flex: 0.15;
+//       display: flex;
+//       justify-content: space-around;
+//       align-items: center;
+//       img {
+//          border-radius: 50%;
+//          width: 40px;
+//          object-fit: contain;
+//          margin-left: 5px;
+//       }
+//    }
+
+//    form {
+//       width: 800px;
+//       flex: 0.7;
+//       display: flex;
+//       margin-left: 80px;
+//       border-radius: 3px;
+//       background-color: $black-secondary;
+
+//       input {
+//          width: 100%;
+//          border: 1.2px solid ;
+//          font-weight: 500;
+//          background: transparent;
+//          padding: 0.3rem;
+//          margin: 0.3rem;
+//          color: $text-color;
+
+//          &:focus {
+//             outline: none;
+//          }
+         
+//       }
+//       .terms {
+//          width: 260px;
+//       }
+//       .location {
+//          width: 270px;
+//       }
+//       .radius {
+//          width: 120px;
+//       }
+
+//       button {
+//          padding: 0 1.25rem;
+//          color: $text-color;
+//          background: transparent;
+//          border: none;
+//          &:focus {
+//             border: none;
+//          }
+//       }
+//    }
+// }
+
+// .header2 {
+//    height: 330px;
+//    width: 550px;
+//    margin-left: 90px;
+
+//    background-color: $black-primary;
+
+//    z-index: 999;
+//    &__menu {
+//       display: none;
+//    }
+//    &__logo {
+//       width: 30px;
+//       height: 30px;
+//       object-fit: contain;
+//       display: block;
+//    }
+//    &__icons {
+//       visibility: hidden;
+//       width: 180px;
+//       flex: 0.15;
+//       display: flex;
+//       justify-content: space-around;
+//       align-items: center;
+//       img {
+//          border-radius: 50%;
+//          width: 40px;
+//          object-fit: contain;
+//          margin-left: 5px;
+//       }
+//    }
+
+//    form {
+//       width: 900px;
+//       display: flex;
+//       flex-wrap: wrap;
+//       border-radius: 3px;
+//       background-color: $black-secondary;
+
+//       input {
+//          width: 100%;
+//          height: 50px;
+//          border: 1.2px solid ;
+//          font-weight: 500;
+//          background: transparent;
+//          padding: 0.3rem;
+//          margin: 0.3rem;
+//          color: $text-color;
+
+//          &:focus {
+//             outline: none;
+//          }
+//       }
+//       textarea {
+//          width: 100%;
+//          height: 50px;
+//          border: 1.2px solid ;
+//          font-weight: 500;
+//          background: transparent;
+//          padding: 0.3rem;
+//          margin: 0.3rem;
+//          color: $text-color;
+
+//          &:focus {
+//             outline: none;
+//          }
+//       }
+//       .select2 {
+//          width: 260px;
+//       }
+//       .terms {
+//          width: 260px;
+//       }
+//       .location {
+//          width: 270px;
+//       }
+//       .radius {
+//          width: 120px;
+//       }
+
+//       button {
+//          color: $text-color;
+//          background: transparent;
+//          border: 1.2px solid;
+//          &:focus {
+//             border: none;
+//          }
+//       }
+//    }
+// }
+
+
 @import '../../_base.scss';
 
 a {
@@ -79,13 +274,13 @@ a {
          }
          
       }
-      .terms {
+      .pages {
          width: 260px;
       }
-      .location {
+      .speed {
          width: 270px;
       }
-      .radius {
+      .terms {
          width: 120px;
       }
 
@@ -171,13 +366,13 @@ a {
       .select2 {
          width: 260px;
       }
-      .terms {
+      .pages {
          width: 260px;
       }
-      .location {
+      .speed {
          width: 270px;
       }
-      .radius {
+      .terms {
          width: 120px;
       }
 

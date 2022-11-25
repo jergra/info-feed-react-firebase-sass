@@ -1,24 +1,17 @@
 to do:
-  center speed value within input
-  
-  test to see if the app works with only the seven 
-  search pages and nothing else; if not, make it so that
-  there is always a minimum number of other pages
+  update scss file terminology to refer to speed, terms, pages
 
   try putting location (speed) retrieval in the bottom useEffect
   with an axios await
 
-  change terminology from locationRadius, location, terms to
-  speed, terms, pages
-
   make the search pages invisible so that they cannot
   be removed
 
-  make pages individually deletable
-
   remove the youtubeAPI functionality
 
+  make pages individually deletable
 
+  
 
 Nov 22, 2022
 

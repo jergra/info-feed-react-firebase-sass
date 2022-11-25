@@ -16,12 +16,15 @@ const Header = () => {
    const history = useHistory()
 
    //const [input, setInput] = useState('')
-   var [location, setLocation] = useState('')
-   const [locationRadius, setLocationRadius] = useState('')
+   //var [location, setLocation] = useState('')
+   var [speed, setSpeed] = useState('')
+   //const [locationRadius, setLocationRadius] = useState('')
+   const [terms, setTerms] = useState('')
 
    //const [category, setCategory] = useState('')
    
-   const [terms, setTerms] = useState('')
+   //const [terms, setTerms] = useState('')
+   const [pages, setPages] = useState('')
 
    var user = useSelector(state => state.auth?.user)
    if (user == null) {
@@ -50,16 +53,20 @@ const Header = () => {
       database.ref(`users/${user.uid}/name`).set({
          userName: userName,
       }).catch(alert);
-      database.ref(`users/${user.uid}/location`).set({
-         location: location,
+      // database.ref(`users/${user.uid}/location`).set({
+      //    location: location,
+      database.ref(`users/${user.uid}/speed`).set({
+         speed: speed,
       }).catch(alert);
        history.push('/')
        window.location.reload()
    }
    const handleSubmit5 = e => {
       e.preventDefault()
-      database.ref(`users/${user.uid}/locationRadius`).set({
-         locationRadius: locationRadius,
+      // database.ref(`users/${user.uid}/locationRadius`).set({
+      //    locationRadius: locationRadius,
+      database.ref(`users/${user.uid}/terms`).set({
+         terms: terms,
       }).catch(alert);
        history.push('/')
        window.location.reload()
@@ -69,8 +76,10 @@ const Header = () => {
       database.ref(`users/${user.uid}/email`).set({
          userEmail: userEmail,
       }).catch(alert);
-      database.ref(`users/${user.uid}/terms`).set({
-         terms: terms
+      // database.ref(`users/${user.uid}/terms`).set({
+      //    terms: terms
+      database.ref(`users/${user.uid}/pages`).set({
+         pages: pages
       }).catch(alert);
        history.push('/')
    }
@@ -84,38 +93,41 @@ const Header = () => {
          }
       }
       
-      database.ref(`users/${user.uid}/location`).on('value', snapshot => {
+      database.ref(`users/${user.uid}/speed`).on('value', snapshot => {
          if (snapshot.val() === null) {
-            setLocation('3')
+            //setLocation('3')
+            setSpeed('3')
          } else {
          
          let response1 = Object.values(snapshot.val())
          //console.log("response1:", response1)
          
-         var loc = snapshot.val().location
-         setLocation(loc)
+         // var loc = snapshot.val().location
+         // setLocation(loc)
+         var speed = snapshot.val().speed
+         setSpeed(speed)
          }
       });
-      database.ref(`users/${user.uid}/locationRadius`).on('value', snapshot => {
+      database.ref(`users/${user.uid}/terms`).on('value', snapshot => {
       if (snapshot.val() === null) {
-         setLocationRadius('web development, coding, javascript, HTML, Python, css, data science, classical piano music, piano, Liszt, Bach, Rachmaninoff, Chopin, language learning, ESL, German, Spanish, Japanese, Danish, fitness, fishing, cooking, travel, Indonesia, Munich')
+         setTerms('web development, coding, javascript, HTML, Python, css, data science, classical piano music, piano, Liszt, Bach, Rachmaninoff, Chopin, language learning, ESL, German, Spanish, Japanese, Danish, fitness, fishing, cooking, travel, Indonesia, Munich')
       } else {
          let response2 = Object.values(snapshot.val())
          //console.log("response2:", response2)
 
-         var rad = snapshot.val().locationRadius
-         setLocationRadius(rad)
+         var terms = snapshot.val().terms
+         setTerms(terms)
       }
       });
-      database.ref(`users/${user.uid}/terms`).on('value', snapshot => {
+      database.ref(`users/${user.uid}/pages`).on('value', snapshot => {
       if (snapshot.val() === null) {
-         setTerms('https://nationalpost.com, https://www.aldaily.com, https://www.nytimes.com, https://www.transparent.com/word-of-the-day/today/chinese.html, https://www.lastampa.it/, https://www.aftenposten.no/, https://www.transparent.com/word-of-the-day/today/japanese.html, https://www.newstatesman.com/international, https://vancouversun.com/, https://www.thestar.com/, http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/, https://mewe.com/myworld, https://www.bbc.com/news, https://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates, https://www.dn.se/, http://www.globeandmail.com, https://www.ledevoir.com/, https://www.sueddeutsche.de/, https://slate.com/, https://www.transparent.com/word-of-the-day/today/german.html, googleNews(), googleVideo(), google(), googleBooks(), youtube(), googleImage(), googleScholar()')
+         setPages('https://nationalpost.com, https://www.aldaily.com, https://www.nytimes.com, https://www.transparent.com/word-of-the-day/today/chinese.html, https://www.lastampa.it/, https://www.aftenposten.no/, https://www.transparent.com/word-of-the-day/today/japanese.html, https://www.newstatesman.com/international, https://vancouversun.com/, https://www.thestar.com/, http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/, https://mewe.com/myworld, https://www.bbc.com/news, https://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates, https://www.dn.se/, http://www.globeandmail.com, https://www.ledevoir.com/, https://www.sueddeutsche.de/, https://slate.com/, https://www.transparent.com/word-of-the-day/today/german.html, googleNews(), googleVideo(), google(), googleBooks(), youtube(), googleImage(), googleScholar()')
       } else {
          let response3 = Object.values(snapshot.val())
          //console.log("response3:", response3)
          
-         var terms = snapshot.val().terms
-         setTerms(terms)
+         var pages = snapshot.val().pages
+         setPages(pages)
       }
       });
    }, [])
@@ -143,8 +155,8 @@ const Header = () => {
    function newPage() {
       //console.log('terms:', terms)
       //console.log('locationRadius:', locationRadius)
-      const urls = terms.split(", ");
-      const words = locationRadius.split(", ")
+      const urls = pages.split(", ");
+      const words = terms.split(", ")
       // console.log('urls:', urls)
       // console.log('words:', words)
       console.log('urls.length:', urls.length)
@@ -277,13 +289,20 @@ const Header = () => {
                <div style={{width: 180, marginLeft: 8, marginTop: 12}}>Speed (minutes)</div>
                <div style={{display: 'flex'}}>
                   <input 
-                     id="customLoc3"
-                     className="location"
+                     // id="customLoc3"
+                     // className="location"
+                     // type="text" 
+                     // style={{width: 50, textAlign: 'center'}}
+                     // placeholder={location}
+                     // defaultValue={location}
+                     // onChange={e => setLocation(e.target.value)}
+                     id="customSpeed"
+                     className="speed"
                      type="text" 
-                     style={{width: 50}}
-                     placeholder={location}
-                     defaultValue={location}
-                     onChange={e => setLocation(e.target.value)}
+                     style={{width: 50, textAlign: 'center'}}
+                     placeholder={speed}
+                     defaultValue={speed}
+                     onChange={e => setSpeed(e.target.value)}
                   />
                   <div style={{ width: 90, height: 50, marginTop: 13, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
@@ -296,13 +315,13 @@ const Header = () => {
                <div style={{width: 530, marginLeft: 10, marginTop: 12}}>Terms</div>
                <div style={{display: 'flex'}}>
                   <textarea
-                     id="customRad3"
-                     className="radius"
+                     id="customTerms"
+                     className="terms"
                      type="text" 
                      style={{width:480, height:280}}
-                     placeholder={locationRadius}
-                     defaultValue={locationRadius}
-                     onChange={e => setLocationRadius(e.target.value)}
+                     placeholder={terms}
+                     defaultValue={terms}
+                     onChange={e => setTerms(e.target.value)}
                   />
                   <div style={{ width: 90, height: 50, marginTop: 6, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
@@ -315,11 +334,11 @@ const Header = () => {
                <div style={{width: 530, marginLeft: 10, marginTop: 30}}>Pages</div>
                <div style={{display: 'flex'}}>
                   <textarea
-                     id="customTerms"
+                     id="customPages"
                      style={{width:730, height:780, marginBottom: 40}}
-                     placeholder={terms}
-                     defaultValue={terms}
-                     onChange={e => setTerms(e.target.value)}
+                     placeholder={pages}
+                     defaultValue={pages}
+                     onChange={e => setPages(e.target.value)}
                   />
                   <div style={{ width: 90, height: 50, marginTop: 6, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
