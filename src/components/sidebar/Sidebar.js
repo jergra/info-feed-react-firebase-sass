@@ -37,19 +37,19 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
             <img src={user?.photoURL} alt='avatar' />
          </div> */}
 
-         <Link to="/">
-         {/* <li>
+         {/* <Link to="/">
+         <li>
             <MdHome size={23} />
             <span onClick={() => handleClick()}  >Home</span>
-         </li> */}
-         </Link>
+         </li>
+         </Link> */}
          
-         <Link to="/feed/subscriptions">
-            {/* <li>
+         {/* <Link to="/feed/subscriptions">
+            <li>
             <MdSubscriptions size={23} />
             <span>Subscriptions</span>
-            </li> */}
-         </Link>
+            </li>
+         </Link> */}
          
             <div className='header1__icons'>
                <img src={user?.photoURL} alt='' />

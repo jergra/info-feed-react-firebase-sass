@@ -3,28 +3,21 @@ import './_header.scss'
 
 import '../categoriesBar/_categoriesBar.scss'
 
-import { AiOutlineSearch, AiFillCaretRight } from 'react-icons/ai'
+//import { AiOutlineSearch, AiFillCaretRight } from 'react-icons/ai'
 import { MdNotifications, MdApps, MdPowerSettingsNew } from 'react-icons/md'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import {database} from '../../firebase'
-import { isCompositeComponent } from 'react-dom/test-utils'
 
 const Header = () => {
 
    const history = useHistory()
 
-   //const [input, setInput] = useState('')
-   //var [location, setLocation] = useState('')
    var [speed, setSpeed] = useState(null)
    
-   //const [locationRadius, setLocationRadius] = useState('')
    const [terms, setTerms] = useState('')
 
-   //const [category, setCategory] = useState('')
-   
-   //const [terms, setTerms] = useState('')
    const [pages, setPages] = useState('')
 
    var user = useSelector(state => state.auth?.user)
@@ -39,23 +32,11 @@ const Header = () => {
    const userName = user.name
    const userEmail = user.email
 
-   //console.log('userName, userEmail:', userName, userEmail)
-   
-   // const handleSubmit1 = e => {
-   //    e.preventDefault()
-   //    history.push(`/search/${[input, location, locationRadius]}`)
-   // }
-   // const handleSubmit2 = e => {
-   //    e.preventDefault()
-   //    history.push(`/search/${[category, location, locationRadius]}`)
-   // }
    const handleSubmit3 = e => {
       e.preventDefault()
       database.ref(`users/${user.uid}/name`).set({
          userName: userName,
       }).catch(alert);
-      // database.ref(`users/${user.uid}/location`).set({
-      //    location: location,
       database.ref(`users/${user.uid}/speed`).set({
          speed: speed,
       }).catch(alert);
@@ -64,8 +45,6 @@ const Header = () => {
    }
    const handleSubmit5 = e => {
       e.preventDefault()
-      // database.ref(`users/${user.uid}/locationRadius`).set({
-      //    locationRadius: locationRadius,
       database.ref(`users/${user.uid}/terms`).set({
          terms: terms,
       }).catch(alert);
@@ -77,8 +56,6 @@ const Header = () => {
       database.ref(`users/${user.uid}/email`).set({
          userEmail: userEmail,
       }).catch(alert);
-      // database.ref(`users/${user.uid}/terms`).set({
-      //    terms: terms
       database.ref(`users/${user.uid}/pages`).set({
          pages: pages
       }).catch(alert);
@@ -100,7 +77,7 @@ const Header = () => {
             setSpeed('3')
          } else {
          
-         let response1 = Object.values(snapshot.val())
+         //let response1 = Object.values(snapshot.val())
          //console.log("response1:", response1)
          
          // var loc = snapshot.val().location
@@ -113,7 +90,7 @@ const Header = () => {
       if (snapshot.val() === null) {
          setTerms('web development, coding, javascript, HTML, Python, css, data science, classical piano music, piano, Liszt, Bach, Rachmaninoff, Chopin, language learning, ESL, German, Spanish, Japanese, Danish, fitness, fishing, cooking, travel, Indonesia, Munich')
       } else {
-         let response2 = Object.values(snapshot.val())
+         //let response2 = Object.values(snapshot.val())
          //console.log("response2:", response2)
 
          var terms = snapshot.val().terms
@@ -124,7 +101,7 @@ const Header = () => {
       if (snapshot.val() === null) {
          setPages('https://nationalpost.com, https://www.aldaily.com, https://www.nytimes.com, https://www.transparent.com/word-of-the-day/today/chinese.html, https://www.lastampa.it/, https://www.aftenposten.no/, https://www.transparent.com/word-of-the-day/today/japanese.html, https://www.newstatesman.com/international, https://vancouversun.com/, https://www.thestar.com/, http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/, https://mewe.com/myworld, https://www.bbc.com/news, https://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates, https://www.dn.se/, http://www.globeandmail.com, https://www.ledevoir.com/, https://www.sueddeutsche.de/, https://slate.com/, https://www.transparent.com/word-of-the-day/today/german.html, googleNews(), googleVideo(), google(), googleBooks(), youtube(), googleImage(), googleScholar()')
       } else {
-         let response3 = Object.values(snapshot.val())
+         //let response3 = Object.values(snapshot.val())
          //console.log("response3:", response3)
          
          var pages = snapshot.val().pages
@@ -134,52 +111,22 @@ const Header = () => {
    }, [])
 
 
-   // function firstPage() {
-   //    const urls = terms.split(", ");
-   //    //const window1 = window.open("", "w1", 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes');
-   //    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-   //    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-      
-   //    if (urls.length >= 8) {
-   //       const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
-   //       window1.focus();
-   //       const y = Math.floor(Math.random() * (urls.length - 7));
-   //       window1.location = urls[y]
-   //       //console.log('y, urls[y]:', y, urls[y])
-   //    } else {
-   //       const window1 = window.open("https://www.aldaily.com", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes')
-   //       window1.focus();
-   //    }
-   // }
-
-        
    function newPage() {
-      //console.log('terms:', terms)
-      //console.log('locationRadius:', locationRadius)
       const urls = pages.split(", ");
       const words = terms.split(", ")
-      // console.log('urls:', urls)
-      // console.log('words:', words)
       console.log('urls.length:', urls.length)
       console.log('words.length:', words.length)
       const x = Math.floor(Math.random() * urls.length);
-      //console.log('x:', x)
          
-      //const window1 = window.open("", "w1", 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes');
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
       
-      //if (urls.length >= 8 && x < urls.length - 7) {
       if (x < urls.length - 7) {
          console.log('x, urls[x]:', x, urls[x]) 
          const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
          window1.focus()
          window1.location = urls[x]
       }  
-      // if (urls.length < 8) {
-      //    const window1 = window.open("https://www.aldaily.com", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes')
-      //    window1.focus();
-      // }
       if (x >= urls.length - 7) {
          console.log('x, urls[x]:', x, urls[x]) 
          const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
@@ -295,13 +242,6 @@ const Header = () => {
                <div style={{width: 180, marginLeft: 8, marginTop: 12}}>Speed (minutes)</div>
                <div style={{display: 'flex'}}>
                   <input 
-                     // id="customLoc3"
-                     // className="location"
-                     // type="text" 
-                     // style={{width: 50, textAlign: 'center'}}
-                     // placeholder={location}
-                     // defaultValue={location}
-                     // onChange={e => setLocation(e.target.value)}
                      id="customSpeed"
                      className="speed"
                      type="text" 
