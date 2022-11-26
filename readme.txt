@@ -1,10 +1,5 @@
 to do:
-  try putting location (speed) retrieval in the bottom useEffect
-  with an axios await
-
-  remove commenting, console.logs
-
-  make the search pages invisible so that they cannot
+  make the search pages such that they cannot
   be removed
 
   remove the youtubeAPI functionality

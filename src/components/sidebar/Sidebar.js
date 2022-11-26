@@ -31,7 +31,7 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
       <nav
         className={sidebar ? "sidebar open" : "sidebar"}
         onClick={() => handleToggleSidebar(false)}
-        style={{display: 'flex', alignItems: 'center'}}
+        style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between'}}
       >
          {/* <div className='header1__icons' style={{marginLeft: -40}}>
             <img src={user?.photoURL} alt='avatar' />
@@ -50,23 +50,23 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
             <span>Subscriptions</span>
             </li>
          </Link> */}
-         
-            <div className='header1__icons'>
+         <div style={{display: 'flex', flexDirection: 'column'}}>
+            <div className='header1__icons' style={{marginTop: 40}}>
                <img src={user?.photoURL} alt='' />
             </div>
-
-            <div style={{marginTop: 50}}>
+            <div style={{marginTop: 40}}>
                <div style={{display: 'flex', cursor: 'pointer'}}>
                   <div onClick={logOutHandler}><MdExitToApp size={23} /></div>
                   <div style={{fontSize: 23, color: '#b1bdb4'}} onClick={logOutHandler}>&nbsp;Logout</div>
                </div>
             </div>
+         </div>
             
-            <div className='header1__icons' style={{marginTop: 200}}>
-               <a href='https://github.com/jergra/info-feed-react-firebase-sass' target='_blank' rel="noreferrer">
-                  <AiFillGithub size={40} />
-               </a>
-            </div>
+         <div className='header1__icons' style={{marginBottom: 50}}>
+            <a href='https://github.com/jergra/info-feed-react-firebase-sass' target='_blank' rel="noreferrer">
+               <AiFillGithub size={40} />
+            </a>
+         </div>
       </nav>
    )
 }
