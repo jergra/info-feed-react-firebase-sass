@@ -17,7 +17,8 @@ const Header = () => {
 
    //const [input, setInput] = useState('')
    //var [location, setLocation] = useState('')
-   var [speed, setSpeed] = useState('')
+   var [speed, setSpeed] = useState(null)
+   
    //const [locationRadius, setLocationRadius] = useState('')
    const [terms, setTerms] = useState('')
 
@@ -239,12 +240,16 @@ const Header = () => {
          }
       }   
    }
-
         
    useEffect(() => {
+      if (speed) {
+         var theSpeed = speed
+      } else {
+         theSpeed = '4'
+      }
       const interval = setInterval(() => {
          newPage()
-      }, 60000);
+      }, parseInt(theSpeed) * 60000);
       return () => clearInterval(interval);
    });
 
@@ -286,6 +291,7 @@ const Header = () => {
                      </div>
                   </button>
                </div>  
+               
                <div style={{width: 180, marginLeft: 8, marginTop: 12}}>Speed (minutes)</div>
                <div style={{display: 'flex'}}>
                   <input 
@@ -311,6 +317,7 @@ const Header = () => {
                   </div>
                </div>
             </form>
+            
             <form onSubmit={handleSubmit5}>
                <div style={{width: 530, marginLeft: 10, marginTop: 12}}>Terms</div>
                <div style={{display: 'flex'}}>
@@ -330,6 +337,7 @@ const Header = () => {
                   </div>
                </div>
             </form>
+            
             <form onSubmit={handleSubmit4}>
                <div style={{width: 530, marginLeft: 10, marginTop: 30}}>Pages</div>
                <div style={{display: 'flex'}}>
