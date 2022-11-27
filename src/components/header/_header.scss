@@ -168,6 +168,10 @@ a {
             outline: none;
          }
       }
+      textarea::placeholder {
+         color: '#b1bdb4';
+         opacity: 1;
+      }
       .select2 {
          width: 260px;
       }

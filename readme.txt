@@ -1,11 +1,5 @@
 to do:
-  useRef setTimeout
-  
-  make the search pages such that they cannot
-  be removed
-
   remove the youtubeAPI functionality
-
   make pages individually deletable
 
   

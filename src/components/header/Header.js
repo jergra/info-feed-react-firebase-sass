@@ -28,6 +28,9 @@ const Header = () => {
    const userName = user.name
    const userEmail = user.email
 
+   const searches = 'https://www.google.com/search?q=\nhttps://news.google.com/search?q=\nhttps://www.google.ca/search?tbm=vid&q=\nhttps://www.google.ca/search?tbm=bks&tbo=1&q=\nhttps://www.google.ca/search?hl=en&tbm=isch&q=\nhttps://scholar.google.ca/scholar?q=\nhttps://www.youtube.com/results?search_query='
+   const descriptions = 'google search\ngoogle news search\ngoogle videos search\ngoogle books search\ngoogle images search\ngoogle scholar search\nyoutube search'
+
    const handleSubmit3 = e => {
       e.preventDefault()
       database.ref(`users/${user.uid}/name`).set({
@@ -87,7 +90,7 @@ const Header = () => {
       
       database.ref(`users/${user.uid}/pages`).on('value', snapshot => {
          if (snapshot.val() === null) {
-            setPages('https://nationalpost.com, https://www.aldaily.com, https://www.nytimes.com, https://www.transparent.com/word-of-the-day/today/chinese.html, https://www.lastampa.it/, https://www.aftenposten.no/, https://www.transparent.com/word-of-the-day/today/japanese.html, https://www.newstatesman.com/international, https://vancouversun.com/, https://www.thestar.com/, http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/, https://mewe.com/myworld, https://www.bbc.com/news, https://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates, https://www.dn.se/, http://www.globeandmail.com, https://www.ledevoir.com/, https://www.sueddeutsche.de/, https://slate.com/, https://www.transparent.com/word-of-the-day/today/german.html, googleNews(), googleVideo(), google(), googleBooks(), youtube(), googleImage(), googleScholar()')
+            setPages('https://nationalpost.com\nhttps://www.aldaily.com\nhttps://quillette.com/\nhttps://www.nytimes.com\nhttps://www.transparent.com/word-of-the-day/today/chinese.html\nhttps://www.lastampa.it/\nhttps://www.aljazeera.com\nhttps://www.transparent.com/word-of-the-day/today/japanese.html\nhttps://www.newstatesman.com/international\nhttps://vancouversun.com/\nhttp://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/\nhttps://www.bbc.com/news\nhttps://www.foxnews.com/\nhttps://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates\nhttp://www.globeandmail.com\nhttps://www.ledevoir.com/\nhttps://www.sueddeutsche.de/\nhttps://slate.com/\nhttps://www.transparent.com/word-of-the-day/today/german.html')
          } else {
             var pages = snapshot.val().pages
             setPages(pages)
@@ -98,22 +101,26 @@ const Header = () => {
 
    const newPage = () => {
 
-      const urls = pages.split(",");
+      const urls = pages.split("\n");
       const words = terms.split(",")
       console.log('urls.length, words.length:', urls.length, words.length)
-      const x = Math.floor(Math.random() * urls.length);
+      const x = Math.floor(Math.random() * urls.length + 7);
          
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
       
-      if (x < urls.length - 7) {
+      if (x < urls.length) {
          console.log('x, urls[x]:', x, urls[x]) 
          const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
          window1.focus()
-         window1.location = urls[x]
+         if (urls[x].length) {
+            window1.location = urls[x]
+         } else {
+            window1.location = urls[1]
+         }
       }  
-      if (x >= urls.length - 7) {
-         console.log('x, urls[x]:', x, urls[x]) 
+      if (x >= urls.length) {
+         //console.log('x, urls[x]:', x, urls[x]) 
          const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
          window1.focus()
          const z = Math.floor(Math.random() * 2 + 1);
@@ -125,50 +132,65 @@ const Header = () => {
          const searchTerm3 = words[randomNumber3]
          console.log('searchTerms:', searchTerm1, searchTerm2, searchTerm3)
          if (z === 1) {
-            if (x === urls.length - 7) {
-               window1.location = "https://news.google.com/search?q="+searchTerm1+"+"+searchTerm2+"&hl=en-CA&lr&ie=UTF-8&oe=UTF-8&sa=N&scoring=d&gl=CA&ceid=CA:en";
-            }
-            if (x === urls.length - 6) {
-               window1.location = "https://www.google.ca/search?tbm=vid&q="+searchTerm1+"+"+searchTerm2;
-            }
-            if (x === urls.length - 5) {
+            if (x === urls.length) {
+               console.log('google:', x) 
                window1.location = "https://www.google.com/search?q="+searchTerm1+"+"+searchTerm2;
             }
-            if (x === urls.length - 4) {
+            if (x === urls.length + 1) {
+               console.log('google news:', x) 
+               window1.location = "https://news.google.com/search?q="+searchTerm1+"+"+searchTerm2+"&hl=en-CA&lr&ie=UTF-8&oe=UTF-8&sa=N&scoring=d&gl=CA&ceid=CA:en";
+            }
+            if (x === urls.length + 2) {
+               console.log('google videos:', x) 
+               window1.location = "https://www.google.ca/search?tbm=vid&q="+searchTerm1+"+"+searchTerm2;
+            }
+            if (x === urls.length + 3) {
+               console.log('google books:', x) 
                window1.location = "https://www.google.ca/search?tbm=bks&tbo=1&q="+searchTerm1+"%20"+searchTerm2+"&btnG=Search+Books";
             }
-            if (x === urls.length - 3) {
-               window1.location = "https://www.youtube.com/results?search_query="+searchTerm1+"%20"+searchTerm2;
-            }
-            if (x === urls.length - 2) {
+            if (x === urls.length + 4) {
+               console.log('google images:', x) 
                window1.location =  "https://www.google.ca/search?hl=en&tbm=isch&q="+searchTerm1+"+"+searchTerm2;
             }
-            if (x === urls.length - 1) {
+            if (x === urls.length + 5) {
+               console.log('google scholar:', x) 
                window1.location = "https://scholar.google.ca/scholar?q="+searchTerm1+"%20"+searchTerm2+"&hl=en&btnG=Search&as_sdt=1%2C5&as_sdtp=on";
+            }
+            if (x === urls.length + 6) {
+               console.log('youtube:', x) 
+               window1.location = "https://www.youtube.com/results?search_query="+searchTerm1+"%20"+searchTerm2;
             }
          }
          if (z === 2) {
-            if (x === urls.length - 7) {
-               window1.location = "https://news.google.com/search?q="+searchTerm1+"+"+searchTerm2+"+"+searchTerm3+"&hl=en-CA&lr&ie=UTF-8&oe=UTF-8&sa=N&scoring=d&gl=CA&ceid=CA:en";
-            }
-            if (x === urls.length - 6) {
-               window1.location = "https://www.google.ca/search?tbm=vid&q="+searchTerm1+"+"+searchTerm2+"+"+searchTerm3;
-            }
-            if (x === urls.length - 5) {
+            if (x === urls.length) {
+               console.log('google:', x) 
                window1.location = "https://www.google.com/search?q="+searchTerm1+"+"+searchTerm2+"+"+searchTerm3;
             }
-            if (x === urls.length - 4) {
+            if (x === urls.length + 1) {
+               console.log('google news:', x) 
+               window1.location = "https://news.google.com/search?q="+searchTerm1+"+"+searchTerm2+"+"+searchTerm3+"&hl=en-CA&lr&ie=UTF-8&oe=UTF-8&sa=N&scoring=d&gl=CA&ceid=CA:en";
+            }
+            if (x === urls.length + 2) {
+               console.log('google videos:', x) 
+               window1.location = "https://www.google.ca/search?tbm=vid&q="+searchTerm1+"+"+searchTerm2+"+"+searchTerm3;
+            }
+            if (x === urls.length + 3) {
+               console.log('google books:', x) 
                window1.location = "https://www.google.ca/search?tbm=bks&tbo=1&q="+searchTerm1+"%20"+searchTerm2+"+"+searchTerm3+"&btnG=Search+Books";
             }
-            if (x === urls.length - 3) {
-               window1.location = "https://www.youtube.com/results?search_query="+searchTerm1+"%20"+searchTerm2+"+"+searchTerm3;
-            }
-            if (x === urls.length - 2) {
+            if (x === urls.length + 4) {
+               console.log('google images:', x) 
                window1.location =  "https://www.google.ca/search?hl=en&tbm=isch&q="+searchTerm1+"+"+searchTerm2+"+"+searchTerm3;
             }
-            if (x === urls.length - 1) {
+            if (x === urls.length + 5) {
+               console.log('google scholar:', x) 
                window1.location = "https://scholar.google.ca/scholar?q="+searchTerm1+"%20"+searchTerm2+"+"+searchTerm3+"&hl=en&btnG=Search&as_sdt=1%2C5&as_sdtp=on";
             }
+            if (x === urls.length + 6) {
+               console.log('youtube:', x) 
+               window1.location = "https://www.youtube.com/results?search_query="+searchTerm1+"%20"+searchTerm2+"+"+searchTerm3;
+            }
+            
          }
       }
    }
@@ -226,7 +248,7 @@ const Header = () => {
                      defaultValue={speed}
                      onChange={e => setSpeed(e.target.value)}
                   />
-                  <div style={{ width: 90, height: 50, marginTop: 14, marginLeft: 20}}>
+                  <div style={{ width: 90, height: 50, marginTop: 15, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
                         Save
                      </button>
@@ -255,7 +277,25 @@ const Header = () => {
             </form>
             
             <form onSubmit={handleSubmit4}>
-               <div style={{width: 530, marginLeft: 10, marginTop: 30, marginBottom: 5, fontSize: 25}}>Pages</div>
+               <div style={{display: 'flex'}}>
+                  <div style={{marginLeft: 10, marginTop: 30, marginBottom: 5, fontSize: 25}}>Fixed Pages</div>
+                  <div style={{marginLeft: 10, marginTop: 35, fontSize: 20}}>(searches using terms selected randomly from the above)</div>
+               </div>
+               <div style={{display: 'flex', marginBottom: 30}}>
+                  <textarea
+                     style={{width:530, height:250}}
+                     placeholder={searches}
+                     //defaultValue={searches}
+                     //onChange={e => setPages(e.target.value)}
+                  />
+                  <textarea
+                     style={{width:250, height:250}}
+                     placeholder={descriptions}
+                     //defaultValue={descriptions}
+                     //onChange={e => setPages(e.target.value)}
+                  />
+               </div>
+               <div style={{marginLeft: 10, marginBottom: 5, fontSize: 25}}>Custom Pages</div>
                <div style={{display: 'flex'}}>
                   <textarea
                      id="customPages"
