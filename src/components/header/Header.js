@@ -3,8 +3,7 @@ import './_header.scss'
 
 import '../categoriesBar/_categoriesBar.scss'
 
-//import { AiOutlineSearch, AiFillCaretRight } from 'react-icons/ai'
-import { MdNotifications, MdApps, MdPowerSettingsNew } from 'react-icons/md'
+import { MdPowerSettingsNew } from 'react-icons/md'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -73,49 +72,37 @@ const Header = () => {
       
       database.ref(`users/${user.uid}/speed`).on('value', snapshot => {
          if (snapshot.val() === null) {
-            //setLocation('3')
             setSpeed('3')
          } else {
-         
-         //let response1 = Object.values(snapshot.val())
-         //console.log("response1:", response1)
-         
-         // var loc = snapshot.val().location
-         // setLocation(loc)
-         var speed = snapshot.val().speed
-         setSpeed(speed)
+            var speed = snapshot.val().speed
+            setSpeed(speed)
          }
       });
+      
       database.ref(`users/${user.uid}/terms`).on('value', snapshot => {
-      if (snapshot.val() === null) {
-         setTerms('web development, coding, javascript, HTML, Python, css, data science, classical piano music, piano, Liszt, Bach, Rachmaninoff, Chopin, language learning, ESL, German, Spanish, Japanese, Danish, fitness, fishing, cooking, travel, Indonesia, Munich')
-      } else {
-         //let response2 = Object.values(snapshot.val())
-         //console.log("response2:", response2)
-
-         var terms = snapshot.val().terms
-         setTerms(terms)
-      }
+         if (snapshot.val() === null) {
+            setTerms('web development, coding, javascript, HTML, Python, css, data science, classical piano music, piano, Liszt, Bach, Rachmaninoff, Chopin, language learning, ESL, German, Spanish, Japanese, Danish, fitness, fishing, cooking, travel, Indonesia, Munich')
+         } else {
+            var terms = snapshot.val().terms
+            setTerms(terms)
+         }
       });
+      
       database.ref(`users/${user.uid}/pages`).on('value', snapshot => {
-      if (snapshot.val() === null) {
-         setPages('https://nationalpost.com, https://www.aldaily.com, https://www.nytimes.com, https://www.transparent.com/word-of-the-day/today/chinese.html, https://www.lastampa.it/, https://www.aftenposten.no/, https://www.transparent.com/word-of-the-day/today/japanese.html, https://www.newstatesman.com/international, https://vancouversun.com/, https://www.thestar.com/, http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/, https://mewe.com/myworld, https://www.bbc.com/news, https://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates, https://www.dn.se/, http://www.globeandmail.com, https://www.ledevoir.com/, https://www.sueddeutsche.de/, https://slate.com/, https://www.transparent.com/word-of-the-day/today/german.html, googleNews(), googleVideo(), google(), googleBooks(), youtube(), googleImage(), googleScholar()')
-      } else {
-         //let response3 = Object.values(snapshot.val())
-         //console.log("response3:", response3)
-         
-         var pages = snapshot.val().pages
-         setPages(pages)
-      }
+         if (snapshot.val() === null) {
+            setPages('https://nationalpost.com, https://www.aldaily.com, https://www.nytimes.com, https://www.transparent.com/word-of-the-day/today/chinese.html, https://www.lastampa.it/, https://www.aftenposten.no/, https://www.transparent.com/word-of-the-day/today/japanese.html, https://www.newstatesman.com/international, https://vancouversun.com/, https://www.thestar.com/, http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/, https://mewe.com/myworld, https://www.bbc.com/news, https://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates, https://www.dn.se/, http://www.globeandmail.com, https://www.ledevoir.com/, https://www.sueddeutsche.de/, https://slate.com/, https://www.transparent.com/word-of-the-day/today/german.html, googleNews(), googleVideo(), google(), googleBooks(), youtube(), googleImage(), googleScholar()')
+         } else {
+            var pages = snapshot.val().pages
+            setPages(pages)
+         }
       });
    }, [])
 
 
    function newPage() {
-      const urls = pages.split(", ");
-      const words = terms.split(", ")
-      console.log('urls.length:', urls.length)
-      console.log('words.length:', words.length)
+      const urls = pages.split(",");
+      const words = terms.split(",")
+      console.log('urls.length, words.length:', urls.length, words.length)
       const x = Math.floor(Math.random() * urls.length);
          
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
@@ -214,14 +201,6 @@ const Header = () => {
                   className='header__logo'
                />
             </div>
-            {/* <div className='header1__icons'>
-               <img src={user?.photoURL} alt='avatar' />
-            </div>
-            <div className='header1__icons'>
-               <img style={{visibility: 'hidden'}} src={user?.photoURL} alt='avatar' />
-               <MdNotifications  size={28}/>
-               <MdApps size={28} />
-            </div> */}
          </div>
 
          <div className='header2' style={{marginTop: 40}}>
@@ -246,7 +225,7 @@ const Header = () => {
                      className="speed"
                      type="text" 
                      style={{width: 50, textAlign: 'center'}}
-                     placeholder={speed}
+                     //placeholder={speed}
                      defaultValue={speed}
                      onChange={e => setSpeed(e.target.value)}
                   />
@@ -302,7 +281,4 @@ const Header = () => {
 }
 
 export default Header
-
-      
-
 

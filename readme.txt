@@ -1,4 +1,6 @@
 to do:
+  divide strings at comma rather than comma plus space
+  
   make the search pages such that they cannot
   be removed
 
