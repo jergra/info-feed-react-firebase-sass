@@ -29,7 +29,7 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
             <div style={{marginTop: 40}}>
                <div style={{display: 'flex', cursor: 'pointer'}}>
                   <div onClick={logOutHandler}><MdExitToApp size={23} /></div>
-                  <div style={{fontSize: 23, color: '#b1bdb4'}} onClick={logOutHandler}>&nbsp;Logout</div>
+                  <div style={{fontSize: 25, color: '#b1bdb4'}} onClick={logOutHandler}>&nbsp;Logout</div>
                </div>
             </div>
          </div>

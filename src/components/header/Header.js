@@ -99,7 +99,8 @@ const Header = () => {
    }, [])
 
 
-   function newPage() {
+   const newPage = () => {
+
       const urls = pages.split(",");
       const words = terms.split(",")
       console.log('urls.length, words.length:', urls.length, words.length)
@@ -172,9 +173,9 @@ const Header = () => {
                window1.location = "https://scholar.google.ca/scholar?q="+searchTerm1+"%20"+searchTerm2+"+"+searchTerm3+"&hl=en&btnG=Search&as_sdt=1%2C5&as_sdtp=on";
             }
          }
-      }   
+      }
    }
-        
+
    useEffect(() => {
       if (speed) {
          var theSpeed = speed
@@ -218,7 +219,7 @@ const Header = () => {
                   </button>
                </div>  
                
-               <div style={{width: 180, marginLeft: 8, marginTop: 12}}>Speed (minutes)</div>
+               <div style={{width: 220, marginLeft: 8, marginTop: 12, fontSize: 25}}>Speed (minutes)</div>
                <div style={{display: 'flex'}}>
                   <input 
                      id="customSpeed"
@@ -238,7 +239,7 @@ const Header = () => {
             </form>
             
             <form onSubmit={handleSubmit5}>
-               <div style={{width: 530, marginLeft: 10, marginTop: 12}}>Terms</div>
+               <div style={{width: 530, marginLeft: 10, marginTop: 12, marginBottom: 5, fontSize: 25}}>Terms</div>
                <div style={{display: 'flex'}}>
                   <textarea
                      id="customTerms"
@@ -258,7 +259,7 @@ const Header = () => {
             </form>
             
             <form onSubmit={handleSubmit4}>
-               <div style={{width: 530, marginLeft: 10, marginTop: 30}}>Pages</div>
+               <div style={{width: 530, marginLeft: 10, marginTop: 30, marginBottom: 5, fontSize: 25}}>Pages</div>
                <div style={{display: 'flex'}}>
                   <textarea
                      id="customPages"
