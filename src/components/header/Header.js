@@ -125,7 +125,7 @@ const Header = () => {
          const searchTerm1 = words[randomNumber1]
          const searchTerm2 = words[randomNumber2]
          const searchTerm3 = words[randomNumber3]
-         //console.log('searchTerms:', searchTerm1, searchTerm2, searchTerm3)
+         console.log('searchTerms:', searchTerm1, searchTerm2, searchTerm3)
          if (z === 1) {
             if (x === urls.length - 7) {
                window1.location = "https://news.google.com/search?q="+searchTerm1+"+"+searchTerm2+"&hl=en-CA&lr&ie=UTF-8&oe=UTF-8&sa=N&scoring=d&gl=CA&ceid=CA:en";
@@ -183,7 +183,7 @@ const Header = () => {
       }
       const interval = setInterval(() => {
          newPage()
-      }, parseInt(theSpeed) * 60000);
+      }, parseFloat(theSpeed) * 60000);
       return () => clearInterval(interval);
    });
 
