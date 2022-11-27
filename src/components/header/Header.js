@@ -12,11 +12,8 @@ import {database} from '../../firebase'
 const Header = () => {
 
    const history = useHistory()
-
    var [speed, setSpeed] = useState(null)
-   
    const [terms, setTerms] = useState('')
-
    const [pages, setPages] = useState('')
 
    var user = useSelector(state => state.auth?.user)
@@ -196,7 +193,6 @@ const Header = () => {
          <div className="top" style={{marginLeft: -300}}>
             <div>
                <img
-                  //src='https://pngimg.com/uploads/youtube/youtube_PNG2.png'
                   src={require('../../screens/loginScreen/information-icon.png').default}
                   alt=''
                   className='header__logo'
@@ -230,7 +226,7 @@ const Header = () => {
                      defaultValue={speed}
                      onChange={e => setSpeed(e.target.value)}
                   />
-                  <div style={{ width: 90, height: 50, marginTop: 13, marginLeft: 20}}>
+                  <div style={{ width: 90, height: 50, marginTop: 14, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
                         Save
                      </button>
