@@ -28,9 +28,6 @@ const Header = () => {
    const userName = user.name
    const userEmail = user.email
 
-   const searches = 'https://www.google.com/search?q=\nhttps://news.google.com/search?q=\nhttps://www.google.ca/search?tbm=vid&q=\nhttps://www.google.ca/search?tbm=bks&tbo=1&q=\nhttps://www.google.ca/search?hl=en&tbm=isch&q=\nhttps://scholar.google.ca/scholar?q=\nhttps://www.youtube.com/results?search_query='
-   const descriptions = 'google search\ngoogle news search\ngoogle videos search\ngoogle books search\ngoogle images search\ngoogle scholar search\nyoutube search'
-
    const handleSubmit3 = e => {
       e.preventDefault()
       database.ref(`users/${user.uid}/name`).set({
@@ -90,7 +87,7 @@ const Header = () => {
       
       database.ref(`users/${user.uid}/pages`).on('value', snapshot => {
          if (snapshot.val() === null) {
-            setPages('https://nationalpost.com\nhttps://www.aldaily.com\nhttps://quillette.com/\nhttps://www.nytimes.com\nhttps://www.transparent.com/word-of-the-day/today/chinese.html\nhttps://www.lastampa.it/\nhttps://www.aljazeera.com\nhttps://www.transparent.com/word-of-the-day/today/japanese.html\nhttps://www.newstatesman.com/international\nhttps://vancouversun.com/\nhttp://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/\nhttps://www.bbc.com/news\nhttps://www.foxnews.com/\nhttps://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates\nhttp://www.globeandmail.com\nhttps://www.ledevoir.com/\nhttps://www.sueddeutsche.de/\nhttps://slate.com/\nhttps://www.transparent.com/word-of-the-day/today/german.html')
+            setPages('https://twitter.com/home\nhttps://nationalpost.com\nhttps://www.aldaily.com\nhttps://quillette.com/\nhttps://www.nytimes.com\nhttps://www.transparent.com/word-of-the-day/today/chinese.html\nhttps://www.lastampa.it/\nhttps://www.aljazeera.com\nhttps://www.transparent.com/word-of-the-day/today/japanese.html\nhttps://www.newstatesman.com/international\nhttps://vancouversun.com/\nhttp://www.theweathernetwork.com/weather/canada/british-columbia/vancouver/\nhttps://www.bbc.com/news\nhttps://www.foxnews.com/\nhttps://vancouver.craigslist.org/search/apa?max_price=900&availabilityMode=0&sale_date=all+dates\nhttp://www.globeandmail.com\nhttps://www.ledevoir.com/\nhttps://www.sueddeutsche.de/\nhttps://slate.com/\nhttps://www.transparent.com/word-of-the-day/today/german.html')
          } else {
             var pages = snapshot.val().pages
             setPages(pages)
@@ -248,7 +245,7 @@ const Header = () => {
                      defaultValue={speed}
                      onChange={e => setSpeed(e.target.value)}
                   />
-                  <div style={{ width: 90, height: 50, marginTop: 18, marginLeft: 20}}>
+                  <div style={{ width: 90, height: 50, marginTop: 17, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
                         Save
                      </button>
