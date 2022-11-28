@@ -248,7 +248,7 @@ const Header = () => {
                      defaultValue={speed}
                      onChange={e => setSpeed(e.target.value)}
                   />
-                  <div style={{ width: 90, height: 50, marginTop: 15, marginLeft: 20}}>
+                  <div style={{ width: 90, height: 50, marginTop: 18, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
                         Save
                      </button>
@@ -279,23 +279,49 @@ const Header = () => {
             <form onSubmit={handleSubmit4}>
                <div style={{display: 'flex'}}>
                   <div style={{marginLeft: 10, marginTop: 30, marginBottom: 5, fontSize: 25}}>Fixed Pages</div>
-                  <div style={{marginLeft: 10, marginTop: 35, fontSize: 20}}>(searches using terms selected randomly from the above)</div>
+                  <div style={{marginLeft: 10, marginTop: 35, fontSize: 20}}>(searches using random terms from the above)</div>
                </div>
                <div style={{display: 'flex', marginBottom: 30}}>
-                  <textarea
-                     style={{width:530, height:250}}
-                     placeholder={searches}
-                     //defaultValue={searches}
-                     //onChange={e => setPages(e.target.value)}
-                  />
-                  <textarea
-                     style={{width:250, height:250}}
-                     placeholder={descriptions}
-                     //defaultValue={descriptions}
-                     //onChange={e => setPages(e.target.value)}
-                  />
+                  <div
+                     style={{
+                        border: '1.2px solid',
+                        color: '#b1bdb4',
+                        marginLeft: 5,
+                        marginTop: 5,
+                        padding: 5,
+                        paddingRight: 10,
+                        fontWeight: 500
+                     }}
+                  >
+                     <div>https://www.google.com/search?q=</div>
+                     <div>https://news.google.com/search?q=</div>
+                     <div>https://www.google.ca/search?tbm=vid&q=</div>
+                     <div>https://www.google.ca/search?tbm=bks&tbo=1&q=</div>
+                     <div>https://www.google.ca/search?hl=en&tbm=isch&q=</div>
+                     <div>https://scholar.google.ca/scholar?q=</div>
+                     <div>https://www.youtube.com/results?search_query=</div>
+                  </div>
+                  <div
+                     style={{
+                        border: '1.2px solid',
+                        color: '#b1bdb4',
+                        marginLeft: 10,
+                        marginTop: 5,
+                        padding: 5,
+                        paddingRight: 10,
+                        fontWeight: 500
+                     }}
+                  >
+                     <div>google search</div>
+                     <div>google news search</div>
+                     <div>google videos search</div>
+                     <div>google books search</div>
+                     <div>google images search</div>
+                     <div>google scholar search</div>
+                     <div>youtube search</div>
+                  </div>
                </div>
-               <div style={{marginLeft: 10, marginBottom: 5, fontSize: 25}}>Custom Pages</div>
+               <div style={{width: 600, marginLeft: 10, marginBottom: 5, fontSize: 25}}>Custom Pages</div>
                <div style={{display: 'flex'}}>
                   <textarea
                      id="customPages"
