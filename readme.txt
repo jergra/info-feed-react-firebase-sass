@@ -1,6 +1,5 @@
 to do:
-  make pages individually deletable
-  remove the youtubeAPI functionality
+  allow pages to be added and deleted individually
   
   
 

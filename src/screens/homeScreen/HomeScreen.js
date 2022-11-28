@@ -91,8 +91,12 @@ const HomeScreen = () => {
     } else {
       window.location.reload()
     }
+    // By commenting 'getData()' we are stopping YoutubeAPI activity.
+    // The app is now an information feed that uses Firebase to store and 
+    // retrieve an authenticated user's search terms and informational pages.
+    // We no longer need anything from YoutubeAPI.
     
-    getData()
+    // getData()
     
   }, [])
 

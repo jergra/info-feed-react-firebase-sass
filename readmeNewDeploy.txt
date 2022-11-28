@@ -36,11 +36,17 @@ under authentication (at firebase) add 'Google'
 
 go to Google Developers Console, find the project in the drop-down (stay on the same computer)
 
-under 'APIs & Services' under 'Library' add 'YouTube Data APIv3' -> enable
+Note: Since the project is now an informational feed and no longer
+needs anything from YoutubeAPI, the line 'getData()' (line 99 on HomeScreen.js)
+was commented out, turning off YoutubeAPI interaction. 
+Therefore, do not do the next three lines:
 
-under 'APIs & Services' under 'Credentials', create an api key: 'create credentials', 'apikey'
+	under 'APIs & Services' under 'Library' add 'YouTube Data APIv3' -> enable
 
-copy this apikey into the .env file
+	under 'APIs & Services' under 'Credentials', create an api key: 'create credentials', 'apikey'
+
+	copy this apikey into the .env file (REACT_APP_YT_API_KEY="<apikey>")
+
 
 'npm start' to verify local functioning, try making a change to the database contents
 
@@ -84,9 +90,14 @@ git remote add origin https://github.com/jergra/<project name>.git
 git branch -M main
 git push -u origin main 
 
-at github -> Settings -> Environments -> add .env and
-add the environmental value name 'REACT_APP_YT_API_KEY' and
-its value, the apikey value
+Note: Since the project is now an informational feed and no longer
+needs anything from YoutubeAPI, the line 'getData()' (line 99 on HomeScreen.js)
+was commented out, turning off YoutubeAPI interaction. 
+Therefore, do not do the following:
+
+	at github -> Settings -> Environments -> add .env and
+	add the environmental value name 'REACT_APP_YT_API_KEY' and
+	its value, the apikey value
 
 
 if you are logged in to firebase, logout

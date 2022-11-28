@@ -103,22 +103,17 @@ export const getRegionCategories = (region) => async (dispatch) => {
     var newLocation = ""
     var newLocationRadius =  ""
     if (location) {
-      //  newKeyword = keyword
-      //  newLocation = location
-      //  newLocationRadius =  locationRadius
-       newKeyword = "blue"
-       newLocation = "49.208442, -123.122645"
-       newLocationRadius =  "50mi"
+       newKeyword = keyword
+       newLocation = location
+       newLocationRadius =  locationRadius
     }
     if (!location) {
-       //newKeyword = keyword
-       newKeyword = "blue"
+       newKeyword = keyword
        newLocation = "49.208442, -123.122645"
        newLocationRadius =  "50mi"
     }
     if (!locationRadius) {
-      //newKeyword = keyword
-      newKeyword = "blue"
+      newKeyword = keyword
       newLocation = "49.208442, -123.122645"
       newLocationRadius =  "50mi"
    }
