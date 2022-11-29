@@ -220,8 +220,6 @@ const Header = () => {
 
          <div className='header2' style={{marginTop: 40}}>
             <form onSubmit={handleSubmit3}>
-               <div style={{width: 500, marginLeft: 10}}>
-               </div>
                <div style={{width: 980, marginLeft: 10, marginTop: 12, marginBottom: 40}}>
                   <button onClick={() => newPage()} style={{paddingTop: 20, paddingBottom: 20, borderRadius: 8}}>
                      <div>
@@ -233,9 +231,16 @@ const Header = () => {
                   </button>
                </div>  
                
-               <div style={{width: 220, marginLeft: 8, marginTop: 12, fontSize: 25}}>Speed (minutes)</div>
-               <div style={{display: 'flex', alignItems: 'end'}}>
-                  <div>
+               <div style={{display: 'flex', alignItems: 'center', marginTop: 12}}>
+                  <div style={{display: 'flex', alignItems: 'center', width: 200, height: 60, marginLeft: 10}}>
+                     <div>
+                        <div style={{display: 'flex', alignItems: 'center'}}>
+                           <div style={{fontSize: 25}}>Speed</div>
+                           <div style={{fontSize: 20, marginLeft: 10}}>(minutes)</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div style={{display: 'flex', alignItems: 'center', width: 80, height: 60}}>
                      <input 
                         id="customSpeed"
                         className="speed"
@@ -246,7 +251,7 @@ const Header = () => {
                         onChange={e => setSpeed(e.target.value)}
                      />
                   </div>
-                  <div style={{ width: 90, height: 50, marginLeft: 20}}>
+                  <div  style={{display: 'flex', alignItems: 'center', width: 120, height: 60}}>
                      <button type='submit' style={{borderRadius: 8}}>
                         Save
                      </button>
