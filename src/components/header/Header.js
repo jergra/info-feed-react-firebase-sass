@@ -117,7 +117,6 @@ const Header = () => {
          }
       }  
       if (x >= urls.length) {
-         //console.log('x, urls[x]:', x, urls[x]) 
          const window1 = window.open("", "w1", 'height=' + vh + ',width=' + vw + ',resizable=yes,scrollbars=yes');
          window1.focus()
          const z = Math.floor(Math.random() * 2 + 1);
@@ -235,17 +234,19 @@ const Header = () => {
                </div>  
                
                <div style={{width: 220, marginLeft: 8, marginTop: 12, fontSize: 25}}>Speed (minutes)</div>
-               <div style={{display: 'flex'}}>
-                  <input 
-                     id="customSpeed"
-                     className="speed"
-                     type="text" 
-                     style={{width: 50, textAlign: 'center'}}
-                     //placeholder={speed}
-                     defaultValue={speed}
-                     onChange={e => setSpeed(e.target.value)}
-                  />
-                  <div style={{ width: 90, height: 50, marginTop: 17, marginLeft: 20}}>
+               <div style={{display: 'flex', alignItems: 'end'}}>
+                  <div>
+                     <input 
+                        id="customSpeed"
+                        className="speed"
+                        type="text" 
+                        style={{width: 50, textAlign: 'center'}}
+                        //placeholder={speed}
+                        defaultValue={speed}
+                        onChange={e => setSpeed(e.target.value)}
+                     />
+                  </div>
+                  <div style={{ width: 90, height: 50, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
                         Save
                      </button>
