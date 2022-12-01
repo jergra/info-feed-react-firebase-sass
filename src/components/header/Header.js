@@ -28,18 +28,7 @@ const Header = () => {
    const userName = user.name
    const userEmail = user.email
 
-   const handleSubmit2 = e => {
-      e.preventDefault()
-      pages = addPage + '\n' + pages
-      database.ref(`users/${user.uid}/email`).set({
-         userEmail: userEmail,
-      }).catch(alert);
-      database.ref(`users/${user.uid}/pages`).set({
-         pages: pages
-      }).catch(alert);
-       history.push('/')
-       window.location.reload()
-   }
+   // change speed
    const handleSubmit3 = e => {
       e.preventDefault()
       database.ref(`users/${user.uid}/name`).set({
@@ -51,14 +40,30 @@ const Header = () => {
        history.push('/')
        window.location.reload()
    }
+   // change terms
    const handleSubmit5 = e => {
       e.preventDefault()
+      database.ref(`users/${user.uid}/email`).set({
+         userEmail: userEmail,
+      }).catch(alert);
       database.ref(`users/${user.uid}/terms`).set({
          terms: terms,
       }).catch(alert);
        history.push('/')
        window.location.reload()
    }
+   // add page
+   const handleSubmit2 = e => {
+      e.preventDefault()
+      pages = addPage + '\n' + pages
+      
+      database.ref(`users/${user.uid}/pages`).set({
+         pages: pages
+      }).catch(alert);
+       history.push('/')
+       window.location.reload()
+   }
+   // delete page
    const handleSubmit4 = e => {
       e.preventDefault()
       const pagesToArray = pages.split('\n')
@@ -67,9 +72,6 @@ const Header = () => {
       const pagesStringSpaced = pagesString.replace(/,/g, "\n")
       pages = pagesStringSpaced
       
-      database.ref(`users/${user.uid}/email`).set({
-         userEmail: userEmail,
-      }).catch(alert);
       database.ref(`users/${user.uid}/pages`).set({
          pages: pages
       }).catch(alert);
