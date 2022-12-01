@@ -134,7 +134,7 @@ a {
    }
 
    form {
-      width: 900px;
+      width: 950px;
       display: flex;
       flex-wrap: wrap;
       border-radius: 3px;
@@ -189,6 +189,19 @@ a {
          color: $text-color;
          background: transparent;
          border: 1.2px solid;
+         &:focus {
+            border: none;
+         }
+      }
+      #buttonX {
+         padding-left: 10px;
+         padding-right: 10px;
+         margin-left: 10px;
+         margin-right: 20px;
+         border-radius: 8px;
+         color: $text-color;
+         background: transparent;
+         border: 1px dashed;
          &:focus {
             border: none;
          }

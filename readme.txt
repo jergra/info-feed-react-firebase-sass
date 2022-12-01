@@ -1,8 +1,3 @@
-to do:
-  allow pages to be added and deleted individually
-  
-  
-
 Nov 22, 2022
 
 C:\dev\info-feed-react-firebase-sass

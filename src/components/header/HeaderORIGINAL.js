@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './_header.scss'
+
+import '../categoriesBar/_categoriesBar.scss'
+
 import { MdPowerSettingsNew } from 'react-icons/md'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -11,10 +14,7 @@ const Header = () => {
    const history = useHistory()
    var [speed, setSpeed] = useState(null)
    const [terms, setTerms] = useState('')
-   var [pages, setPages] = useState('')
-   const [addPage, setAddPage] = useState('')
-
-   const [thisIndx, setThisIndx] = useState(null)
+   const [pages, setPages] = useState('')
 
    var user = useSelector(state => state.auth?.user)
    if (user == null) {
@@ -28,18 +28,6 @@ const Header = () => {
    const userName = user.name
    const userEmail = user.email
 
-   const handleSubmit2 = e => {
-      e.preventDefault()
-      pages = addPage + '\n' + pages
-      database.ref(`users/${user.uid}/email`).set({
-         userEmail: userEmail,
-      }).catch(alert);
-      database.ref(`users/${user.uid}/pages`).set({
-         pages: pages
-      }).catch(alert);
-       history.push('/')
-       window.location.reload()
-   }
    const handleSubmit3 = e => {
       e.preventDefault()
       database.ref(`users/${user.uid}/name`).set({
@@ -61,12 +49,6 @@ const Header = () => {
    }
    const handleSubmit4 = e => {
       e.preventDefault()
-      const pagesToArray = pages.split('\n')
-      pagesToArray.splice(thisIndx, 1)
-      const pagesString = pagesToArray.toString()
-      const pagesStringSpaced = pagesString.replace(/,/g, "\n")
-      pages = pagesStringSpaced
-      
       database.ref(`users/${user.uid}/email`).set({
          userEmail: userEmail,
       }).catch(alert);
@@ -74,7 +56,6 @@ const Header = () => {
          pages: pages
       }).catch(alert);
        history.push('/')
-       window.location.reload()
    }
    
    useEffect(() => {
@@ -205,6 +186,7 @@ const Header = () => {
                console.log('youtube:', x) 
                window1.location = "https://www.youtube.com/results?search_query="+searchTerm1+"%20"+searchTerm2+"+"+searchTerm3;
             }
+            
          }
       }
    }
@@ -223,6 +205,8 @@ const Header = () => {
 
     
    return (
+      <div>
+         
       <div id="header">
          <div className="top" style={{marginLeft: -300}}>
             <div>
@@ -235,7 +219,6 @@ const Header = () => {
          </div>
 
          <div className='header2' style={{marginTop: 40}}>
-         
             <form onSubmit={handleSubmit3}>
                <div style={{width: 980, marginLeft: 10, marginTop: 12, marginBottom: 40}}>
                   <button onClick={() => newPage()} style={{paddingTop: 20, paddingBottom: 20, borderRadius: 8}}>
@@ -247,6 +230,7 @@ const Header = () => {
                      </div>
                   </button>
                </div>  
+               
                <div style={{display: 'flex', alignItems: 'center', marginTop: 12}}>
                   <div style={{display: 'flex', alignItems: 'center', width: 200, height: 60, marginLeft: 10}}>
                      <div>
@@ -262,6 +246,7 @@ const Header = () => {
                         className="speed"
                         type="text" 
                         style={{width: 50, textAlign: 'center'}}
+                        //placeholder={speed}
                         defaultValue={speed}
                         onChange={e => setSpeed(e.target.value)}
                      />
@@ -275,15 +260,13 @@ const Header = () => {
             </form>
             
             <form onSubmit={handleSubmit5}>
-               <div style={{width: 795, marginLeft: 10, marginTop: 12, marginBottom: 5, fontSize: 25}}>
-                  Terms
-               </div>
+               <div style={{width: 530, marginLeft: 10, marginTop: 12, marginBottom: 5, fontSize: 25}}>Terms</div>
                <div style={{display: 'flex'}}>
                   <textarea
                      id="customTerms"
                      className="terms"
                      type="text" 
-                     style={{width: 765, height:280}}
+                     style={{width:480, height:280}}
                      placeholder={terms}
                      defaultValue={terms}
                      onChange={e => setTerms(e.target.value)}
@@ -294,13 +277,12 @@ const Header = () => {
                      </button>
                   </div>
                </div>
+            </form>
+            
+            <form onSubmit={handleSubmit4}>
                <div style={{display: 'flex'}}>
-                  <div style={{marginLeft: 10, marginTop: 30, marginBottom: 5, fontSize: 25}}>
-                     Fixed Pages
-                  </div>
-                  <div style={{marginLeft: 10, marginTop: 35, fontSize: 20}}>
-                     (searches using random terms from the above)
-                  </div>
+                  <div style={{marginLeft: 10, marginTop: 30, marginBottom: 5, fontSize: 25}}>Fixed Pages</div>
+                  <div style={{marginLeft: 10, marginTop: 35, fontSize: 20}}>(searches using random terms from the above)</div>
                </div>
                <div style={{display: 'flex', marginBottom: 30}}>
                   <div
@@ -342,24 +324,17 @@ const Header = () => {
                      <div>youtube search</div>
                   </div>
                </div>
-            </form>
-
-            <form onSubmit={handleSubmit2}>
-               <div style={{display: 'flex', alignItems: 'center', height: 100, marginTop: 12}}>
-                  <div style={{width: 150, marginLeft: 10, fontSize: 25}}>
-                     Add a Page
-                  </div>
-                  <div style={{display: 'flex', alignItems: 'center', width: 620, height: 60}}>
-                     <input 
-                        id="customSpeed"
-                        className="speed"
-                        type="text" 
-                        style={{width: 620}}
-                        placeholder={'e.g.: https://www.reuters.com'}
-                        onChange={e => setAddPage(e.target.value)}
-                     />
-                  </div>
-                  <div  style={{display: 'flex', alignItems: 'center', width: 120, height: 60, marginLeft: 20}}>
+               <div style={{width: 600, marginLeft: 10, marginBottom: 5, fontSize: 25}}>Custom Pages</div>
+               
+               <div style={{display: 'flex'}}>
+                  <textarea
+                     id="customPages"
+                     style={{width:730, height:780, marginBottom: 40}}
+                     placeholder={pages}
+                     defaultValue={pages}
+                     onChange={e => setPages(e.target.value)}
+                  />
+                  <div style={{ width: 90, height: 50, marginTop: 6, marginLeft: 20}}>
                      <button type='submit' style={{borderRadius: 8}}>
                         Save
                      </button>
@@ -367,29 +342,9 @@ const Header = () => {
                </div>
             </form>
             
-            <form onSubmit={handleSubmit4} style={{marginBottom: 60}}>
-               
-               <div style={{width: 600, marginLeft: 10, marginBottom: 25, fontSize: 25}}>
-                  Pages
-               </div>
-            
-               <div style={{marginBottom: 20}}>
-                  {
-                     pages.split("\n").map((page, index) => (
-                        <div key={index} style={{display: 'flex'}}>
-                           <div onClick={()=> setThisIndx(index)}>            
-                              <button type='submit' id='buttonX'>
-                                 x
-                              </button>
-                           </div>
-                           <div>{page}</div>
-                        </div>
-                     ))
-                  }
-               </div>
-            </form>
          </div>
       </div>
+   </div>
    )
 }
 

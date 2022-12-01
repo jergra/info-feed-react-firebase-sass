@@ -34,7 +34,7 @@ const LoginScreen = () => {
                alt=''
                style={{marginBottom: 26}}
             />
-            <button onClick={handleLogin}>Login with Google</button>
+            <button onClick={handleLogin}>Login With Google</button>
          </div>
       </div>
    )
