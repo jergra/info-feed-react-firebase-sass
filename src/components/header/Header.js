@@ -285,7 +285,7 @@ const Header = () => {
                      id="customTerms"
                      className="terms"
                      type="text" 
-                     style={{width: 765, height:280}}
+                     style={{width: 770, height:280}}
                      placeholder={terms}
                      defaultValue={terms}
                      onChange={e => setTerms(e.target.value)}
@@ -381,7 +381,7 @@ const Header = () => {
                         <div key={index} style={{display: 'flex'}}>
                            <div onClick={()=> setThisIndx(index)}>            
                               <button type='submit' id='buttonX'>
-                                 x
+                                 X
                               </button>
                            </div>
                            <div>{page}</div>
