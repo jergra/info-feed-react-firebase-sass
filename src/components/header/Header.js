@@ -61,7 +61,7 @@ const Header = () => {
          pages: pages
       }).catch(alert);
        history.push('/')
-       window.location.reload()
+       //window.location.reload()
    }
    // delete page
    const handleSubmit4 = e => {
@@ -76,7 +76,7 @@ const Header = () => {
          pages: pages
       }).catch(alert);
        history.push('/')
-       window.location.reload()
+       //window.location.reload()
    }
    
    useEffect(() => {
