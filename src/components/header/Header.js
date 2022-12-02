@@ -38,7 +38,7 @@ const Header = () => {
          speed: speed,
       }).catch(alert);
        history.push('/')
-       window.location.reload()
+       //window.location.reload()
    }
    // change terms
    const handleSubmit5 = e => {
@@ -214,6 +214,9 @@ const Header = () => {
    useEffect(() => {
       if (speed) {
          var theSpeed = speed
+         if (theSpeed < 0.25) {
+            theSpeed = 0.5
+         }
       } else {
          theSpeed = '4'
       }
