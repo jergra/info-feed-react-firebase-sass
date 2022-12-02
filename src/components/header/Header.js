@@ -212,11 +212,11 @@ const Header = () => {
    }
 
    useEffect(() => {
-      if (speed) {
-         var theSpeed = speed
-         if (theSpeed < 0.25) {
-            theSpeed = 0.5
-         }
+      var theSpeed = '4'
+      if (speed === '0' || speed === '0.') {
+         theSpeed = '4'
+      } else if (speed) {
+         theSpeed = speed
       } else {
          theSpeed = '4'
       }
@@ -256,7 +256,9 @@ const Header = () => {
                   <div style={{display: 'flex', alignItems: 'center', width: 200, height: 60, marginLeft: 10}}>
                      <div>
                         <div style={{display: 'flex', alignItems: 'center'}}>
-                           <div style={{fontSize: 25}}>Speed</div>
+                           <div style={{fontSize: 25}}>
+                              Speed
+                           </div>
                            <div style={{fontSize: 20, marginLeft: 10}}>(minutes)</div>
                         </div>
                      </div>
