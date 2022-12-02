@@ -50,7 +50,7 @@ const Header = () => {
          terms: terms,
       }).catch(alert);
        history.push('/')
-       window.location.reload()
+       //window.location.reload()
    }
    // add page
    const handleSubmit2 = e => {
