@@ -32,9 +32,9 @@ const LoginScreen = () => {
                //src='https://icon2.cleanpng.com/20180329/thq/kisspng-online-newspaper-computer-icons-newspaper-5abc7bfd98df25.2914582015223019496262.jpg'
                src={require('./information-icon.png').default}
                alt=''
-               style={{marginBottom: 26}}
+               style={{marginBottom: 40}}
             />
-            <button style={{paddingLeft: 20, paddingRight: 20}} onClick={handleLogin}>Login With Google</button>
+            <button style={{padding: '5px 15px', fontSize: 23}} onClick={handleLogin}>Login With Google</button>
          </div>
       </div>
    )
