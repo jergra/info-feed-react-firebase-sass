@@ -317,7 +317,7 @@ const Header = () => {
                         marginLeft: 5,
                         marginTop: 5,
                         padding: 5,
-                        paddingRight: 10,
+                        paddingRight: 25,
                         fontWeight: 500
                      }}
                   >
@@ -336,7 +336,7 @@ const Header = () => {
                         marginLeft: 10,
                         marginTop: 5,
                         padding: 5,
-                        paddingRight: 10,
+                        paddingRight: 20,
                         fontWeight: 500
                      }}
                   >
