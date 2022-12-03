@@ -203,8 +203,8 @@ a {
          background: transparent;
          opacity: 0.4;
          border: 1px dashed;
-         &:focus {
-            border: none;
+         &:hover {
+            opacity: 0.8;
          }
       }
    }
