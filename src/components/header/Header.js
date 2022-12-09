@@ -306,7 +306,7 @@ const Header = () => {
                      Fixed Pages
                   </div>
                   <div style={{marginLeft: 10, marginTop: 35, fontSize: 20}}>
-                     (searches using random terms from the above)
+                     (searches using terms chosen randomly from the above)
                   </div>
                </div>
                <div style={{display: 'flex', marginBottom: 30}}>
