@@ -122,7 +122,7 @@ const Header = () => {
       const urls = pages.split("\n");
       const words = terms.split(",")
       console.log('urls.length, words.length:', urls.length, words.length)
-      const x = Math.floor(Math.random() * urls.length + 7);
+      const x = Math.floor(Math.random() * (urls.length + 7));
          
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
