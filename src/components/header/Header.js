@@ -60,11 +60,8 @@ const Header = () => {
       database.ref(`users/${user.uid}/pages`).set({
          pages: pages
       }).catch(alert);
-      setAddPage('')
       history.push('/')
-      
-      
-       //window.location.reload()
+      window.location.reload()
    }
    // delete page
    const handleSubmit4 = e => {
@@ -365,7 +362,7 @@ const Header = () => {
                         className="speed"
                         type="text" 
                         style={{width: 620}}
-                        placeholder={'e.g.: https://www.reuters.com'}
+                        placeholder={'eg: https://www.reuters.com'}
                         onChange={e => setAddPage(e.target.value)}
                      />
                   </div>
