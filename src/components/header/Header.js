@@ -60,7 +60,10 @@ const Header = () => {
       database.ref(`users/${user.uid}/pages`).set({
          pages: pages
       }).catch(alert);
-       history.push('/')
+      setAddPage('')
+      history.push('/')
+      
+      
        //window.location.reload()
    }
    // delete page
