@@ -55,13 +55,15 @@ const Header = () => {
    // add page
    const handleSubmit2 = e => {
       e.preventDefault()
-      pages = addPage + '\n' + pages
+      const separated = addPage.replaceAll(' ', '\n')
+      pages = separated + '\n' + pages
       
       database.ref(`users/${user.uid}/pages`).set({
          pages: pages
       }).catch(alert);
+      setAddPage('')
       history.push('/')
-      window.location.reload()
+      //window.location.reload()
    }
    // delete page
    const handleSubmit4 = e => {
@@ -363,6 +365,7 @@ const Header = () => {
                         type="text" 
                         style={{width: 620}}
                         placeholder={'eg: https://www.reuters.com'}
+                        value={addPage}
                         onChange={e => setAddPage(e.target.value)}
                      />
                   </div>
