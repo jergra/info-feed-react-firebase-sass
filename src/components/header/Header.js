@@ -356,7 +356,7 @@ const Header = () => {
             <form onSubmit={handleSubmit2}>
                <div style={{display: 'flex', alignItems: 'center', height: 100, marginTop: 12}}>
                   <div style={{width: 150, marginLeft: 10, fontSize: 25}}>
-                     Add a Page
+                     Add Pages
                   </div>
                   <div style={{display: 'flex', alignItems: 'center', width: 620, height: 60}}>
                      <input 
@@ -364,7 +364,7 @@ const Header = () => {
                         className="speed"
                         type="text" 
                         style={{width: 620}}
-                        placeholder={'eg: https://www.reuters.com'}
+                        placeholder={'eg: https://www.reuters.com https://reddit.com'}
                         value={addPage}
                         onChange={e => setAddPage(e.target.value)}
                      />
