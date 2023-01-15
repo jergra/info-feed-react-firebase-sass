@@ -19,7 +19,6 @@ start locally:
   npm start
 
 deployed:
-  https://info-feed-react-firebase-sass.firebaseapp.com
   https://info-feed-react-firebase-sass.web.app
 
 update:
