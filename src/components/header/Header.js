@@ -252,7 +252,7 @@ const Header = () => {
                      <div>
                         <div><MdPowerSettingsNew size={40} /></div>
                         <div style={{marginLeft: 20, marginRight: 20, marginTop: 10, fontSize: 30}}>
-                           Start
+                           Star
                         </div>
                      </div>
                   </button>
