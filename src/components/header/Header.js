@@ -126,8 +126,11 @@ const Header = () => {
       console.log('urls.length, words.length:', urls.length, words.length)
       const x = Math.floor(Math.random() * (urls.length + 7));
          
-      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+      // const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+      // const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+      
+      const vw = window.screen.width
+      const vh = window.screen.height
       
       if (x < urls.length) {
          console.log('x, urls[x]:', x, urls[x]) 
